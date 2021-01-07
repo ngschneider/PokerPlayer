@@ -7,7 +7,7 @@ public class Card {
     
     public Card(int cardNumber, int suit){
         this.cardNumber = cardNumber;
-        this.suit = suite;
+        this.suit = suit;
     }
 
     private String getSuite(){
@@ -46,6 +46,6 @@ public class Card {
     }
 
     public String toString(){
-        return "" + this.getFaceCard() + ", " + this.getSuite();
+        return "[" + this.getFaceCard() + ", " + this.getSuite() + "]";
     }
 }
