@@ -13,14 +13,21 @@ public class CardGroup {
         return this.cardGroup.size();
     }
 
-    public void addHandCard(Card cd){
+    public void addCard(Card cd){
         this.maintainCardMax();
         this.cardGroup.add(cd);
     }
-   public ArrayList<Card> getCards(){
+
+    public void updateCardGroup( ArrayList<Card> cds ) {
+        this.cardGroup = cds;
         this.maintainCardMax();
         this.maintainCardMin();
-        return this.getCards();
+    }
+
+    public ArrayList<Card> getCards(){
+        this.maintainCardMax();
+        this.maintainCardMin();
+        return this.cardGroup;
    }
    
     private void maintainCardMax(){
@@ -40,7 +47,7 @@ public class CardGroup {
 
     
     public String toString(){
-        String str = "";
+        String str = "Card set: \n";
         for (Card card : this.cardGroup) {
             str += card.toString() + ", ";
         }
