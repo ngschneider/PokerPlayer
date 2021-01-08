@@ -10,4 +10,8 @@ public class Hand extends CardGroup{
         this.setMaxAndMin(this.MAX_CARDS, this.MIN_CARDS);
     }
 
+    public void clearHand(){
+        
+    }
+
 }
