@@ -8,6 +8,10 @@ public class TexasHoldEMGame{
         texas.dealHands();
         System.out.println(texas.toString());
         texas.betRound();
+        texas.dealBoard();
+        texas.betRound();
+        texas.dealBoard();
+        texas.betRound();
 
        
 

@@ -81,18 +81,21 @@ public class TexasHoldEM extends Table{
                 flop.addCard(deck.deal());
                 this.cardRound++;
                 this.board.dealBoard(flop);
+                System.out.println(this.board.toString());
                 return true;
             case 1 : 
                 Turn turn = new Turn();
                 turn.addCard(deck.deal());
                 this.cardRound++;
                 this.board.dealBoard(turn);
+                System.out.println(this.board.toString());
                 return true;
             case 2 : 
                 River river = new River();
                 river.addCard(deck.deal());
                 this.cardRound++;
                 this.board.dealBoard(river);
+                System.out.println(this.board.toString());
                 return true;
             default : 
                 return false;  
