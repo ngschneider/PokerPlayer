@@ -1,4 +1,3 @@
-package PokerPlayer;
 
 import Cards.Hand;
 import Cards.Card;
@@ -92,6 +91,5 @@ public class Player{
         + "=> " + this.stack.toString() 
             +  this.hand.toString();
     }
-
 
 }

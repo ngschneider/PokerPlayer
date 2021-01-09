@@ -12,6 +12,14 @@ public class Card {
         this.suit = suit;
     }
 
+    public int getCardNumber(){
+        return this.cardNumber;
+    }
+
+    public int getSuit(){
+        return this.suit;
+    }
+
     private String getSuite(){
         switch(this.suit){
             case -1 : 
@@ -28,7 +36,7 @@ public class Card {
                 return "[INVALID SUIT NUMBER]";
         }
     }
-
+    
     private String getFaceCard(){
         switch(this.cardNumber){
             case -1 : 
