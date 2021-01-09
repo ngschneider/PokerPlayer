@@ -6,6 +6,9 @@ public class Chips {
 
     public Chips(int chips){
         this.chipCount = chips;
+    }  
+    public Chips(Chips chips){
+        this.chipCount += this.getChipCount(chips); 
     }
 
     public void addChips(Chips chips){

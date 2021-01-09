@@ -1,5 +1,7 @@
 package Chips;
 
+import Chips.Bet;
+
 public class PlayerChipStack extends Chips{
 
     private int startingStack = -1;
@@ -7,6 +9,11 @@ public class PlayerChipStack extends Chips{
     public PlayerChipStack(int startingStack){
         super(startingStack);
         this.startingStack = startingStack;
+    }
+
+    public Bet makeBet(){
+        
+        
     }
 
 }
