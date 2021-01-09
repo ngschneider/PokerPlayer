@@ -1,7 +1,6 @@
 import Cards.Deck;
-import Cards.Flop;
-import Cards.River;
-import Cards.Turn;
+
+import Cards.Board;
 
 public class Table {
 
@@ -13,8 +12,12 @@ public class Table {
         this.seats = new Seats(seats);
     }
 
-    public addPlayer(String Name, int startingStack){
-        this.seats.addPlayer();
+    public void addPlayer(String name, int startingStack){
+        this.seats.addPlayer(name,startingStack);
+    }
+
+    public String tableToString(){
+        return "Board \n" + this.board.toString() + "\n";
     }
 
 }

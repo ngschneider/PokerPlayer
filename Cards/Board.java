@@ -2,12 +2,12 @@ package Cards;
 
 public class Board extends CardGroup{
 
-    final private int MAX_CARDS = 0;
-    final private int MIN_CARDS = 5;
+    final private int MAX_CARDS = 5;
+    final private int MIN_CARDS = 1;
 
-    private Flop flop = null;
-    private Turn turn = null;
-    private River river = null;
+    private Flop flop = new Flop();
+    private Turn turn = new Turn();
+    private River river = new River();
 
     public Board(){
         super();
@@ -41,6 +41,9 @@ public class Board extends CardGroup{
 
     public River getRiver(){
         return this.river;
+    }
+    public String toString(){
+        return "" + this.flop.toString() + this.turn.toString() + this.river.toString();
     }
 
 }

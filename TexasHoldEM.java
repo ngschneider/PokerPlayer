@@ -1,11 +1,16 @@
+import PokerPlayer.Player;
+import Cards.Flop;
+import Cards.Turn;
+import Cards.River;
+import Cards.Board;
 
-
+import java.util.ArrayList;
 public class TexasHoldEM extends Table{
         
     private int cardRound = 0;
     private int betRound = 0;
     private int playerTurn = 0;
-    private Players playersIn;
+    private ArrayList<Player> playersIn;
 
     public TexasHoldEM(){
         super(9);
@@ -16,30 +21,35 @@ public class TexasHoldEM extends Table{
         shuffles new deck
     */
     public void newRound(){
-        this.playersIn = this.seats;
+        this.playersIn = this.seats.getPlayerList();
         this.deck.generateDeck();
         this.deck.shuffleDeck();
+      //  System.out.println(this.deck.toString());
 
     }
     /*
         Tracks the player that is up to act.
     */
     public int nextAction(){
-        if(this.playerTurn > this.playersIn.size()){
-            Player currentPlayer = this.playersIn(this.playerTurn);
+        if(this.playersIn.size() < 2) throw new Error("Less than 2 players at the table!");
+
+        if(this.playerTurn  <= this.playersIn.size() - 1) {
              this.playerTurn++;
              return this.playerTurn - 1;
         }
         this.playerTurn = 0;
-        return nextAction();
+        return this.nextAction();
 
     }
 
+
+    public void playersBet(){
+
+    }
     /*
         Deal hand to all the players that are in
     */
-
-    public boolean dealHands(){
+    public void dealHands(){
         for(int i = 0; i < 2; i++){
             for(int j = 0; j < this.playersIn.size(); j++){
                 this.dealToPlayer();
@@ -52,7 +62,7 @@ public class TexasHoldEM extends Table{
         Deal a single card to single player
     */
 
-    public boolean dealToPlayer(){
+    public void dealToPlayer(){
         int currentPlayer = nextAction();
         this.playersIn.get(currentPlayer).setHand(this.deck.deal());
     }
@@ -68,27 +78,34 @@ public class TexasHoldEM extends Table{
                 flop.addCard(deck.deal());
                 flop.addCard(deck.deal());
                 this.cardRound++;
-                this.dealBoard(flop);
+                this.board.dealBoard(flop);
                 return true;
-                break;
             case 1 : 
                 Turn turn = new Turn();
                 turn.addCard(deck.deal());
                 this.cardRound++;
-                this.dealBoard(turn);
+                this.board.dealBoard(turn);
                 return true;
-                break;
             case 2 : 
                 River river = new River();
                 river.addCard(deck.deal());
                 this.cardRound++;
-                this.dealBoard(river);
+                this.board.dealBoard(river);
                 return true;
-                break;
             default : 
                 return false;  
         }
     }
+
+    public String toString(){
+        String str = "Players : \n";
+        for(Player p : this.playersIn){
+            str += p.toString() + "\n";
+        }
+        str += this.board.toString();
+        return str;
+    }
+
 
 
 }

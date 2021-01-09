@@ -1,19 +1,21 @@
+import PokerPlayer.Player;
 import java.util.ArrayList;
 
-public class seats {
+public class Seats {
 
     private ArrayList<Player> playerList = new ArrayList<Player>();
     private int MAX_SEATS = -1;
 
-    public seats(int maxSeats){
+    public Seats(int maxSeats){
         this.MAX_SEATS = maxSeats;
     }
 
-    public boolean addPlayer(String name,int startingStack){
+    public boolean addPlayer(String name, int startingStack){
         maintainSeatMax();
         Player newPlayer = new Player(name);
         newPlayer.setStack(startingStack);
         this.playerList.add(newPlayer);
+        return true;
 
     }
 
@@ -27,6 +29,9 @@ public class seats {
                 index++;
         }
         return false;
+    }
+    public ArrayList<Player> getPlayerList(){
+        return this.playerList;
     }
     private void maintainSeatMax(){
 

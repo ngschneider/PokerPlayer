@@ -20,5 +20,12 @@ public class Chips {
     private int getChipCount(Chips chip){
         return this.chipCount;
     }
+    public int getCount(){
+        return this.chipCount;
+    }
+
+    public String toString(){
+        return "" + this.chipCount;
+    }
 
 }

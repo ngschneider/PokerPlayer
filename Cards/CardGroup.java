@@ -49,7 +49,7 @@ public class CardGroup {
 
     
     public String toString(){
-        String str = "Card set: \n";
+        String str = "";
         for (Card card : this.cardGroup) {
             str += card.toString() + ", ";
         }
