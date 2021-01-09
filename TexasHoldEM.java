@@ -12,7 +12,7 @@ public class TexasHoldEM extends Table{
     private int betRound = 0;
     private int playerTurn = 0;
     private Position pos = new Position();
-    private ArrayList<Action> action = new ArrayList<Action>();
+    private int currentBet = 0;;
     private ArrayList<Player> playersIn;
 
     public TexasHoldEM(){
@@ -25,22 +25,28 @@ public class TexasHoldEM extends Table{
         updates new token positions
     */
     public void newRound(){
+
         this.playersIn = this.seats.getPlayerList();
         this.deck.generateDeck();
         this.deck.shuffleDeck();
+        this.pos.updateSizeOfTable(this.playersIn.size());
         this.pos.newGameRound();
+
       //  System.out.println(this.deck.toString());
 
     }
 
-
     public void betRound(){
-
+        for(int j = 0; j < this.pos.getTableSize(); j++){
+            this.playerBet();
+        }
     }
 
     public void playerBet(){
         int currentBetter = this.pos.nextAction();
-
+        Action act = this.playersIn.get(currentBetter).decide(this.currentBet);
+        System.out.println(this.playersIn.get(currentBetter).getPlayerName().toString() +
+        "  " +  act.toString());
     }
 
     /*

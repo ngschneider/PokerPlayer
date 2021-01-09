@@ -11,9 +11,8 @@ public class PlayerChipStack extends Chips{
         this.startingStack = startingStack;
     }
 
-    public Bet makeBet(){
-        
-        
+    public Bet makeBet(int amount){
+        return new Bet(getChips(amount));
     }
 
 }

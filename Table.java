@@ -13,7 +13,10 @@ public class Table {
     }
 
     public void addPlayer(String name, int startingStack){
-        this.seats.addPlayer(name,startingStack);
+        this.seats.addPlayer(name, startingStack);
+    }
+    public void addPlayer(String name, int startingStack,int type){
+        this.seats.addPlayer(name, startingStack, type);
     }
 
     public String tableToString(){

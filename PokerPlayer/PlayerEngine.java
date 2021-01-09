@@ -9,30 +9,38 @@ public class PlayerEngine {
 
     private ArrayList<Action> actions;
 
-    public PlayerEngine(ArrayList<Action> actions){
-        this.actions = actions;
-        System.out.println(this.mainMenu());
-        this.getSelectedAction();
+    public PlayerEngine(){
+        
     }
 
-    public Action getSelectedAction(){
-        return this.actions.get(this.getInput());
+    public int start(){
+        System.out.println(this.mainMenu());
+        return this.getSelectedAction();
+    }
+
+    public int getSelectedAction(){
+        int act = (this.getInput());
+        return act;
     }
     public int getInput(){
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
         scan.close();
-        return num;
+        return num - 1;
 
+    }
+
+    public int getRaise(){
+        System.out.println("Enter how much you would like to raise too.\n");
+        return this.getInput();
     }
 
     public String mainMenu(){
         String str = "Your turn.\n";
-        int index = 0;
-        for(Action act : this.actions){
-            str+= index + ". " + act.getAction() + "\n";
-            index++;
-        }
+        str += "1. Fold\n";
+        str += "2. Call\n";
+        str += "3. Raise\n";
+        str += "4. Check\n"; 
         return str;
     }
 }

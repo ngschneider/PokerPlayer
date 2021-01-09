@@ -1,23 +1,21 @@
 package Actions;
 
+import Chips.*;
 public class Raise extends Action{
 
-    private int currentBet = -1;
-    private int bet = -1;
-    public Raise(int currentBet, int bet){
+    private Call currentBet;
+    private Bet bet;
+
+    public Raise(Call call, Bet bet){
         super("Raise");
-        this.currentBet = currentBet;
+        this.currentBet = call;
         this.bet = bet; 
     }
     public int getRaise(){
-        return this.currentBet - this.bet;
-    }
-
-    public int getBet(){
-        return this.bet;
+        return this.currentBet.getBetAmount() + this.bet.getCount();
     }
 
     public String raiseToString(){
-        return "Raised to " +  this.getBet() + " from " + this.currentBet;
+        return "Raised to " +  this.getRaise();
     }
 }

@@ -19,6 +19,15 @@ public class Seats {
 
     }
 
+    public boolean addPlayer(String name, int startingStack, int type){
+        maintainSeatMax();
+        Player newPlayer = new Player(name, type);
+        newPlayer.setStack(startingStack);
+        this.playerList.add(newPlayer);
+        return true;
+
+    }
+
     public boolean deletePlayer(String name){
         int index = 0;
         for (Player player : this.playerList) {
