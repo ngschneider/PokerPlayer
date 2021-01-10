@@ -1,7 +1,8 @@
-import Cards.Card;
+package Cards.Evaluaator;
+ import Cards.Cards;
 
 /*
-    
+    Determines if any 2 cards are a pair.
 */
 
 public class Pair {
