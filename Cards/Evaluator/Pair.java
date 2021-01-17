@@ -1,7 +1,9 @@
-import Cards.Card;
+package Cards.Evaluator;
+
+ import Cards.*;
 
 /*
-    
+    Determines if any 2 cards are a pair.
 */
 
 public class Pair {
@@ -43,7 +45,11 @@ public class Pair {
 
     public int getPairNum(){
         if(!this.isPair) throw new Error("Cards are not a pair!");
-        return this.getPairNum();
+        return this.pairNum;
+    }
+
+    public boolean getPair(){
+        return this.isPair;
     }
 
 }

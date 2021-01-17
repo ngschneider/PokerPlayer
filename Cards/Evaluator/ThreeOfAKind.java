@@ -1,7 +1,9 @@
 package Cards.Evaluator;
 
 import Cards.Card;
-
+/*
+    Determines if a CONFIRMED pair and any card is a three of a kind.
+*/
 public class ThreeOfAKind{
 
     private Pair p;

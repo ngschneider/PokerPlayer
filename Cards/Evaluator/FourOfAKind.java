@@ -1,7 +1,10 @@
 package Cards.Evaluator;
 
 import Cards.Card;
-
+/*
+    Determines if a CONFIRMED Three Of A Kind and 
+    any card is a Four Of A Kind
+*/
 public class FourOfAKind {
     private ThreeOfAKind t;
     private Card cd;
