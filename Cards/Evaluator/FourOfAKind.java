@@ -31,10 +31,10 @@ public class FourOfAKind {
         3 - t1  < t2
     */
 
-    public int compare(FourOfAKind t1, FourOfAKind t2){
-        if(!t1.isFourOfAKind || !t2.isFourOfAKind) throw new Error("Cards are not a Four of a Kind!");
-        if(t1.getFourOfAKindNum() > t2.getFourOfAKindNum()) return 2;
-        if(t1.getFourOfAKindNum() < t2.getFourOfAKindNum()) return 3;
+    public int compare( FourOfAKind t2){
+        if(!this.isFourOfAKind || !t2.isFourOfAKind) throw new Error("Cards are not a Four of a Kind!");
+        if(this.getFourOfAKindNum() > t2.getFourOfAKindNum()) return 2;
+        if(this.getFourOfAKindNum() < t2.getFourOfAKindNum()) return 3;
         return 1;
     }
 

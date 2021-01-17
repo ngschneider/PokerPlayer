@@ -25,10 +25,10 @@ public class Flush {
         return true;
     }
 
-    public int compare(Flush f1,Flush f2){
-        if(!f1.getFlush() || !f2.getFlush()) throw new Error("Comparing non-flush");
-        if(f1.getHighestNum() > f2.getHighestNum()) return 0;
-        if(f1.getHighestNum() < f2.getHighestNum()) return 1;
+    public int compare(Flush f2){
+        if(!this.getFlush() || !f2.getFlush()) throw new Error("Comparing non-flush");
+        if(this.getHighestNum() > f2.getHighestNum()) return 0;
+        if(this.getHighestNum() < f2.getHighestNum()) return 1;
         return 2;
     }
 

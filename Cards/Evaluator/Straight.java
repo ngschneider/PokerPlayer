@@ -19,7 +19,7 @@ public class Straight{
     }
 
     public boolean isStaight(){
-        int lowest = 9999;
+        int lowest = 99999999;
         int highest = -1;
         int total = 0;
        for(Card cd : this.cardGroup.getCards()){
@@ -38,10 +38,10 @@ public class Straight{
        }
     }
 
-    public int compare(Straight st1,Straight st2){
-        if(!st1.getStraight() || !st2.getStraight()) throw new Error("Comparing a non-straight");
-        if(st1.getHighestNum() > st2.getHighestNum()) return 0;
-        if(st1.getHighestNum() < st2.getHighestNum()) return 1;
+    public int compare(Straight st2){
+        if(!this.getStraight() || !st2.getStraight()) throw new Error("Comparing a non-straight");
+        if(this.getHighestNum() > st2.getHighestNum()) return 0;
+        if(this.getHighestNum() < st2.getHighestNum()) return 1;
         return 2;
     }
 

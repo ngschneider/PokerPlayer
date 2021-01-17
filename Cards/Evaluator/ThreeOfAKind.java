@@ -31,10 +31,10 @@ public class ThreeOfAKind{
         3 - t1  < t2
     */
 
-    public int compare(ThreeOfAKind t1, ThreeOfAKind t2){
-        if(!t1.isThreeOfAKind || !t2.isThreeOfAKind) throw new Error("Cards are not a Three of a Kind!");
-        if(t1.getThreeOfAKindNum() > t2.getThreeOfAKindNum()) return 2;
-        if(t1.getThreeOfAKindNum() < t2.getThreeOfAKindNum()) return 3;
+    public int compare(ThreeOfAKind t2){
+        if(!this.isThreeOfAKind || !t2.isThreeOfAKind) throw new Error("Cards are not a Three of a Kind!");
+        if(this.getThreeOfAKindNum() > t2.getThreeOfAKindNum()) return 2;
+        if(this.getThreeOfAKindNum() < t2.getThreeOfAKindNum()) return 3;
         return 1;
     }
 

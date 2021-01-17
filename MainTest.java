@@ -17,17 +17,7 @@ public class MainTest{
         //System.out.println(deck.toString());
         //System.out.println(deck.deal().toString());
 
-
-
-
-
-
-
-
-
         //**********EVALUATOR TEST*****************
-
-
         Card cd1 = new Card(2,1);Card cd2 = new Card(3,1);
         Card cd3 = new Card(4,1);Card cd4 = new Card(5,1);
         Card cd5 = new Card(6,1); Card cd6 = new Card(7,2);
@@ -57,16 +47,6 @@ public class MainTest{
 
         CardEvaluator eval = new CardEvaluator(board);
         eval.evaluateHand(hd);
-
-
-
-        
-
-
-
-
-
-
 
     }
 }

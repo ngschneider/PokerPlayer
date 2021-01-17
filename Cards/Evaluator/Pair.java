@@ -1,4 +1,4 @@
-package Cards.Evaluator;
+//package Cards.Evaluator;
 
  import Cards.*;
 
@@ -10,7 +10,7 @@ public class Pair {
 
     private Card cd1;
     private Card cd2;
-    private boolean isPair = false;
+    privaste boolean isPair = false;
     private int pairNum = -1;
 
     public Pair(Card cd1, Card cd2 ){
@@ -36,10 +36,10 @@ public class Pair {
         2 - p1  > p2
         3 - p1  < p2
     */
-    public int compare(Pair p1, Pair p2){
-        if(!p1.isPair || !p2.isPair) throw new Error("Cards are not a pair!");
-        if(p1.getPairNum() > p2.getPairNum()) return 2;
-        if(p1.getPairNum() < p2.getPairNum()) return 3;
+    public int compare(Pair p2){
+        if(!this.isPair || !p2.isPair) throw new Error("Cards are not a pair!");
+        if(this.getPairNum() > p2.getPairNum()) return 2;
+        if(this.getPairNum() < p2.getPairNum()) return 3;
         return 1;
     }
 

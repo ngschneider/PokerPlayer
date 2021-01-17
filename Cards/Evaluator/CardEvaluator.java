@@ -1,5 +1,3 @@
-package Cards.Evaluator;
-
 import Cards.Board;
 import Cards.Card;
 import Cards.Hand;
@@ -34,8 +32,5 @@ public class CardEvaluator{
                 }
             }
         }
-
     }
-
-
 }
